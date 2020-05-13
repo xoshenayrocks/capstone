@@ -1,0 +1,43 @@
+﻿@model ViewCartModel
+
+<h1>Your Order.</h1>
+<hr />
+<form asp-action="Checkout" asp-controller="ShoppingCart">
+    <div>
+        @foreach (var cartitem in @Model.Cart)
+        {
+            <p>
+                @cartitem.Name<br />
+                @cartitem.Qty x<br />
+                $@cartitem.Price
+            </p> 
+            <a asp-controller="ShoppingCart"
+               asp-action="DeleteCartItem"
+               asp-route-productId="@cartitem.ProductId">
+                Delete
+            </a>
+        }
+
+        @foreach (var cartitem in Model.Cart)
+        {
+            var total = cartitem.Qty * cartitem.Price;
+            Model.Subtotal = Model.Subtotal + total;
+        }
+
+
+    </div>
+    ---------------------<br />
+
+
+    <h3>
+        Order Subtotal: $@Model.Subtotal <br />
+
+    </h3>
+    <button>
+        @Html.ActionLink("Checkout", "Checkout", "ShoppingCart", new { Subtotal = Model.Subtotal }
+           )
+    </button>
+
+
+</form>
+<button>@Html.ActionLink("Back to Menu", "Menu", "Home")</button>

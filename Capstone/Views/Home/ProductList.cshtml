@@ -1,18 +1,18 @@
 ﻿@model ProductListViewModel
-
-    <ul class="list-group">
-        @foreach (var product in Model.ProductList)
-        {
-            <li class="list-group-item">
-                <div>
-                    <h4>@product.Name </h4>
-                    <a asp-controller="ShoppingCart"
-                       asp-action="AddToCart"
-                       asp-route-coffeeID="@product.ProductId">
-                        Add to Cart
-                    </a>
-
-                </div>
-            </li>
-        }
-    </ul>
+    <form asp-controller="Home" asp-action="AddToCart">
+        <ul class="list-group">
+            @foreach (var product in Model.ProductList)
+            {
+                <li class="list-group-item">
+                    <div>
+                        <h4>@product.Name</h4>
+                        <h1>@product.Description</h1>
+                        <h1>$@product.Price</h1>
+                        <a asp-controller="Home" asp-action="AddToCart" asp-route-productId="@product.ProductId">Order</a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </form>
+    
+<a asp-controller="Home" asp-action="Menu">Back to Menu</a>

@@ -19,16 +19,17 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
            <PackageReference Include="Identity.Dapper" Version="0.8.3-alpha" />
     <PackageReference Include="Identity.Dapper.SqlServer" Version="0.8.3-alpha" />
-  </ItemGroup>
-    
-      <ItemGroup>
-    <PackageReference Include="Identity.Dapper" Version="0.8.3-alpha" />
-    <PackageReference Include="Identity.Dapper.SqlServer" Version="0.8.3-alpha" />
+    <PackageReference Include="bootstrap" Version="4.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="config\" />
     <Folder Include="Views\User\" />
+    <Folder Include="Views\ShoppingCart\" />
+    <Folder Include="Models\HomeViewModels\" />
+    <Folder Include="Models\UserViewModels\" />
+    <Folder Include="Models\ManageViewModels\" />
+    <Folder Include="Views\Manage\" />
   </ItemGroup>
 </Project>

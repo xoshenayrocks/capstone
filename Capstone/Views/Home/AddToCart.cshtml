@@ -1,0 +1,25 @@
+﻿@model AddToCartViewModel
+
+<h4>@Model.Name</h4>
+<form asp-controller="Home" asp-action="AddToCart">
+
+    <div>
+        <label asp-for="Qty">Quantity</label>
+        <input asp-for="Qty" type="number" value="1" />
+        <input type="submit" value="AddToCart" />
+    </div>
+    <input asp-for="ProductId" type="hidden" />
+</form>
+
+<form asp-controller="ShoppingCart" asp-action="ViewCart">
+    <input type="submit" value="ViewCart" />
+</form>
+<div>
+    <a href="javascript:void(0);" onclick="history.go(-1);">Back to Menu</a>
+</div>
+
+
+@*how many
+    go back shopping
+    checkout*@
+

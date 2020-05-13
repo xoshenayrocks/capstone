@@ -5,7 +5,7 @@ namespace Capstone.Models
 {
     public class ProductListViewModel
     {
-        public IEnumerable<ProductNameAndId> ProductList { get; set; }
+        public IEnumerable<Product> ProductList { get; set; }
 
     }
 }

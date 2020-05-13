@@ -18,6 +18,7 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/Users/shenayrussell/.nuget/packages/microsoft.entityframeworkcore.tools/3.1.2</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">/Users/shenayrussell/.nuget/packages/jquery/3.0.0</PkgjQuery>
     <Pkgcodecracker_CSharp Condition=" '$(Pkgcodecracker_CSharp)' == '' ">/Users/shenayrussell/.nuget/packages/codecracker.csharp/1.1.0</Pkgcodecracker_CSharp>
   </PropertyGroup>
 </Project>

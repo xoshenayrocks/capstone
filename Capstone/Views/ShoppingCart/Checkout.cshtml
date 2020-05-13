@@ -1,0 +1,46 @@
+﻿@model CheckoutViewModel
+
+<h1>Checkout.</h1>
+<hr />
+
+<h4>Order Summary.</h4>
+<form asp-action="CheckoutConfirmation" asp-controller="ShoppingCart">
+    <div>
+        <label asp-for="Subtotal">Subtotal: $@Model.Subtotal</label> <br />
+        <label asp-for="Tax">Tax: $@(Model.Subtotal  * Model.Tax)</label> <br />
+        <label asp-for="Total">Grand Total: $@(Model.Subtotal + Model.Tax)</label><br />
+    </div>
+    <hr />
+    <div>
+        <div>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" type="text" placeholder="Full Name"/>
+
+        </div>
+        <div>
+            <label asp-for="Address">Address</label>
+            <input asp-for="Address" type="text" />
+        </div>
+        <div>
+            <label asp-for="City"> City</label>
+            <input asp-for="City" type="text" />
+            <label asp-for="State">State</label>
+            <input asp-for="State" type="text" />
+            <label asp-for="ZipCode">Zip Code</label>
+            <input asp-for="ZipCode" type="number" maxlength="5" placeholder="Zip Code" value=" ">
+        </div>
+        <div>
+            <hr /> Card Number:
+            <select tabindex="4" id="CardType" style="margin-left: 10px;">
+                <option value="AmEx">American Express</option>
+                <option value="Discover">Discover</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="Visa">Visa</option>
+            </select> <input asp-for="CreditCardNumber" type="text" id="CardNumber" placeholder="Credit Card Number" maxlength="16" size="20" style="margin-left: 10px;">
+            <button id="mybutton" type="button" style="margin-left: 10px; color: #f00;">@Html.ActionLink("Continue to Payment", "CheckoutConfirmation", "ShoppingCart", new { Name = Model.Name})</button>
+        </div>
+    </div>
+
+
+
+</form>

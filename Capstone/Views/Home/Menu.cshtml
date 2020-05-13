@@ -1,0 +1,19 @@
+﻿@model  MenuViewModel
+
+    <form asp-action="ProductList" asp-controller="Home">
+        <h4>
+            <a asp-controller="Home"
+               asp-action="ProductList"
+               asp-route-category="drink">
+                Drink
+            </a>
+        </h4>
+
+        <h4>
+            <a asp-controller="Home"
+               asp-action="ProductList"
+               asp-route-category="food">
+                Food
+            </a>
+        </h4>
+    </form>

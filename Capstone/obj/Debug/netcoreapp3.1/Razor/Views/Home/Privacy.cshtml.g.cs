@@ -26,8 +26,29 @@ using Capstone.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/shenayrussell/Projects/Capstone/Capstone/Views/_ViewImports.cshtml"
+using Capstone.Models.UserViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "/Users/shenayrussell/Projects/Capstone/Capstone/Views/_ViewImports.cshtml"
+using Capstone.Models.ManageViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "/Users/shenayrussell/Projects/Capstone/Capstone/Views/_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0aa07997cef09066f0c784721652eef4b38cfb35", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0f8695db31d9ac1513bfc09bcb5b65aac94654ba", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3df0858f843f40e2f93398d942dafa684d66bfd1", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

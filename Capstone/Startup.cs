@@ -33,22 +33,25 @@ namespace Capstone
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration.GetSection("ConnectionStrings:DefaultConnection");
+ 
             services.AddSingleton<IProductRepo, ProductRepo>();
             services.Configure<DatabaseConfig>(Configuration.GetSection("Database"));
             services.AddControllersWithViews();
-            services.ConfigureDapperConnectionProvider<SqlServerConnectionProvider>(
-              Configuration.GetSection("ConnectionStrings")
+            services.ConfigureDapperConnectionProvider<SqlServerConnectionProvider>(Configuration.GetSection("DapperIdentity")
           ).ConfigureDapperIdentityCryptography(Configuration.GetSection("DapperIdentityCryptography"))
-           .ConfigureDapperIdentityOptions(new DapperIdentityOptions { UseTransactionalBehavior = true });
+           .ConfigureDapperIdentityOptions(new DapperIdentityOptions { UseTransactionalBehavior = false });
+
+
 
             services.AddIdentity<DapperIdentityUser, DapperIdentityRole>(identityOptions =>
             {
+                identityOptions.SignIn.RequireConfirmedEmail = false;
                 identityOptions.Password.RequireDigit = false;
                 identityOptions.Password.RequiredLength = 1;
                 identityOptions.Password.RequireLowercase = false;
                 identityOptions.Password.RequireNonAlphanumeric = false;
                 identityOptions.Password.RequireUppercase = false;
+                
             })
             .AddDapperIdentityFor<SqlServerConfiguration>()
             .AddDefaultTokenProviders();

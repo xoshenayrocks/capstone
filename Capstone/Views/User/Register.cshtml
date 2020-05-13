@@ -1,4 +1,6 @@
-﻿@model RegisterViewModel
+﻿@using Microsoft.AspNetCore.Authentication
+@model RegisterViewModel
+@inject IAuthenticationSchemeProvider SchemeProvider
 
 @{
     ViewData["Title"] = "Register";

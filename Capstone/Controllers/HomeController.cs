@@ -24,26 +24,65 @@ namespace Capstone.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+ 
+
+        public IActionResult Menu()
         {
-            return View();
+            var menu = new MenuViewModel();
+            return View(menu);
         }
 
-        public async Task<IActionResult> ProductList()
+        public async Task<IActionResult> ProductList(string category)
         {
             var model = new ProductListViewModel();
-            var list = await _productrepository.DisplayProducts();
+            var menu = new MenuViewModel();
+            menu.Category = category;
+   
+                var list = await _productrepository.DisplayProducts(menu);
 
-            model.ProductList = list.Select(products=> new ProductNameAndId() { Name = products.Name, ProductId = products.Id})
+            if (menu.Category == "drink")
+            {
+                model.ProductList = list.Select(products => new Product() { Name = products.Name, ProductId = products.ProductId, Description = products.Description, Price = products.Price }).Where(cat => menu.Category == "drink")
                 .ToList();
+            }
+
+            if (menu.Category == "food")
+            {
+                model.ProductList = list.Select(products => new Product() { Name = products.Name, ProductId = products.ProductId, Description = products.Description, Price = products.Price }).Where(cat => menu.Category == "food")
+      .ToList();
+            }
 
             return View(model);
         }
+
+        public IActionResult Order()
+        {
+            return RedirectToAction(nameof(AddToCart));
+        }
+
+        [HttpGet]
+        public IActionResult AddToCart(int productId)
+        {
+            var cart = new AddToCartViewModel();
+            cart.ProductId = productId;
+            return View(cart);
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart(AddToCartViewModel model)
+        {
+            var qty = model.Qty;
+
+            var list = _productrepository.AddToCart(model, model.ProductId);
+            return View(model);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
