@@ -11,6 +11,7 @@ namespace Capstone.Services
         bool AddToCart(AddToCartViewModel cart, int productId);
         Task<IEnumerable<Cart>> ViewCart(ViewCartModel model);
         public bool DeleteCartItem(int ProductId);
+        void Clear();
     }
 
 }

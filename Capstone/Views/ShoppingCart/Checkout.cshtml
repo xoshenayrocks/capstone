@@ -36,8 +36,8 @@
                 <option value="Discover">Discover</option>
                 <option value="MasterCard">MasterCard</option>
                 <option value="Visa">Visa</option>
-            </select> <input asp-for="CreditCardNumber" type="text" id="CardNumber" placeholder="Credit Card Number" maxlength="16" size="20" style="margin-left: 10px;">
-            <button id="mybutton" type="button" style="margin-left: 10px; color: #f00;">@Html.ActionLink("Continue to Payment", "CheckoutConfirmation", "ShoppingCart", new { Name = Model.Name})</button>
+            </select> <input asp-for="CreditCardNumber" type="text" id="CardNumber" placeholder="Credit Card Number" value=" " maxlength="16" size="20" style="margin-left: 10px;">
+            @Html.ActionLink("Continue to Payment", "CheckoutConfirmation", "ShoppingCart", new {Name = Model.Name })
         </div>
     </div>
 

@@ -50,11 +50,14 @@ namespace Capstone.Controllers
             return View(checkout);
         }
 
-        public IActionResult CheckoutConfirmation()
+        public IActionResult CheckoutConfirmation(CheckoutViewModel checkout)
         {
-            var model = new CheckoutConfirmationViewModel();
+ 
+            var model = new CheckoutConfirmationViewModel { Name = checkout.Name} ;
+            _productrepository.Clear();
             return View(model);
         }
+
     }
 
 }

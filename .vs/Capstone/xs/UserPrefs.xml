@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{94E9116D-CEAA-4DC2-9B00-155E78371504}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Capstone/Views/ShoppingCart/Checkout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Capstone/Views/ShoppingCart/ViewCart.cshtml">
     <Files>
-      <File FileName="Capstone/Services/ProductRepo.cs" Line="78" Column="84" />
+      <File FileName="Capstone/Views/ShoppingCart/CheckoutConfirmation.cshtml" Line="1" Column="18" IsPinned="True" />
+      <File FileName="Capstone/Services/ProductRepo.cs" Line="98" Column="15" />
       <File FileName="Capstone/Controllers/HomeController.cs" Line="79" Column="1" />
       <File FileName="Capstone/Views/ShoppingCart/ViewCart.cshtml" Line="13" Column="18" />
-      <File FileName="Capstone/Views/ShoppingCart/CheckoutConfirmation.cshtml" Line="1" Column="18" />
-      <File FileName="Capstone/Models/Cart.cs" Line="5" Column="41" />
       <File FileName="Capstone/Views/Home/AddToCart.cshtml" Line="11" Column="1" />
-      <File FileName="Capstone/Views/ShoppingCart/Checkout.cshtml" Line="18" Column="25" />
-      <File FileName="Capstone/Models/CheckoutConfirmationViewModel.cs" Line="4" Column="18" />
+      <File FileName="Capstone/Views/ShoppingCart/Checkout.cshtml" Line="17" Column="1" />
+      <File FileName="Capstone/Controllers/ShoppingCartController.cs" Line="54" Column="1" />
+      <File FileName="Capstone/Services/IProductRepo.cs" Line="14" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +26,7 @@
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="ShoppingCart" expanded="True">
-                  <Node name="Checkout.cshtml" selected="True" />
+                  <Node name="ViewCart.cshtml" selected="True" />
                 </Node>
               </Node>
               <Node name="appsettings.json" expanded="True" />
@@ -43,6 +43,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/shenayrussell/Projects/Capstone/Capstone/config/MySqlConfig.cs" relfile="Capstone/config/MySqlConfig.cs" line="23" column="1" />
+      <Breakpoint file="/Users/shenayrussell/Projects/Capstone/Capstone/Controllers/ShoppingCartController.cs" relfile="Capstone/Controllers/ShoppingCartController.cs" line="53" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

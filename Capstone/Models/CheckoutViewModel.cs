@@ -5,6 +5,7 @@ namespace Capstone.Models
 {
     public class CheckoutViewModel
     {
+        
        public double Total { get; set; }
         public double Subtotal { get; set; }
         public double Tax { get; set; } = 0.06;

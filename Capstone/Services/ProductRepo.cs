@@ -87,7 +87,7 @@ join Products on Products.ProductId = Cart.ProductId";
         }
 
 
-        /* public  async void Clear()
+        public  async void Clear()
          {
 
              var query = "Truncate Table Cart";
@@ -97,6 +97,6 @@ join Products on Products.ProductId = Cart.ProductId";
 
              }
 
-         }*/
+         }
     }
 }
